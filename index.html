@@ -1,94 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weather App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer ></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<html>
+    <head>
+        <title>WEATHER APPLICATION</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header id="header">
+            <a href ="#" class="logo"> 
+                <p>&#169;</p>AJAY'S WEBSITE</a>
+                
+            <ul>
+                <li><a href="#">home</a></li>
+            </ul>
+        </header>
+        <section>
+            <h2 id="text"><span>TODAY'S WEATHER  </span><br>FORECAST</h2>
+            <img src="./bird1.png" id="bird1">
+            <img src="./bird2.png" id="bird2">
+            <img src="./rocks.png" id="rocks">
+            <img src="./water.png" id="water">
+            <img src="./forest.png" id="forest">
+            <a href="../new/index.html" id="btn"> Explore</a>
+        </section>
+        <div class="sec">
+            <h2>WEATHER APP</h2>
+            <P>Weather is the state of the atmosphere, describing for example the degree to which it is hot or cold, wet or dry, calm or stormy, clear or cloudy<br> On Earth, most weather phenomena occur in the lowest layer of the planet's atmosphere, the troposphere,[2][3] just below the stratosphere. Weather refers to day-to-day temperature, precipitation, and other atmospheric conditions, whereas climate is the term for the averaging of atmospheric conditions over longer periods of time.[4] When used without qualification, "weather" is generally understood to mean the weather of Earth.
 
-</head>
-<body>
-    
-    <div class="card">
-      
-        <div class="search">
-            <input type="text" class="search-bar" placeholder="search">
-            <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
-
-            </path>
-        </svg></button>
+                Weather is driven by air pressure, temperature, and moisture differences between one place and another<br>These differences can occur due to the Sun's angle at any particular spot, which varies with latitude. The strong temperature contrast between polar and tropical air gives rise to the largest scale atmospheric circulations: the Hadley cell, the Ferrel cell, the polar cell, and the jet stream. Weather systems in the middle latitudes, such as extratropical cyclones, are caused by instabilities of the jet streamflow. Because Earth's axis is tilted relative to its orbital plane , sunlight is incident at different angles at different times of the year. On Earth's surface, temperatures annually. Over thousands of years, changes in Earth's orbit can affect the amount and distribution of solar energy received by Earth, thus influencing long-term climate and global climate change.
+                
+                Surface temperature differences in turn cause pressure differences. Higher altitudes are cooler than lower altitudes, as most atmospheric heating is due to contact with the Earth's surface while radiative losses to space are mostly constant. Weather forecasting is the application of science and technology to predict the state of the atmosphere for a future time and a given location. Earth's weather system is a chaotic system; as a result, small changes to one part of the system can grow to have large effects on the system as a whole. Human attempts to control the weather have occurred throughout history, and there is evidence that human activities such as agriculture and industry have modified weather patterns
+            </P>
         </div>
-        
-    <div class="weather loading">
-        <h2 class="city">Weather in Denver</h2>
-        <h1 class="temp">51°C</h1>
-         <div class="flex">
-            <img src="https://openweathermap.org/img/wn/04d.png" alt="" class="icon"/>
-            <div class="description">Cloudy</div>
-        </div>
-        <div class="humidity">Humidity: 60%</div>
-        <div class="wind">Wind speed: 6.2  km/h</div>
-    </div>
-    </div>
-    <div class="future-forecast">
-      <div class="today" id="current-temp">
-          
-          <div class="other">
+        <script>
+            let text=document.getElementById('text');
+            let bird1=document.getElementById('bird1');
+            let bird2=document.getElementById('bird2');
+            let btn=document.getElementById('btn');
+            let rocks=document.getElementById('forest');
+            let forest=document.getElementById('forest');
+            let water=document.getElementById('water');
+            let header=document.getElementById('header');
 
-              <div class="feels_like"><i class="fa-solid fa-temperature-three-quarters"></i> feels_like</div>
-              
-              <div class="temp_max">temp_max 125.4&#176;C</div>
-              <div class="temp_min">temp_min 35.6&#176;C</div>
-          </div>
-      </div>
+            window.addEventListener('scroll',function(){
+                let value=window.scrollY;
+                text.style.top=50+value*-0.5+'%';
+                bird1.style.top=value*-1.5+'px';
+                bird1.style.left=value*2+'px';
+                bird2.style.top=value*-1.5+'px';
+                bird2.style.top=value*-5+'px';
+                btn.style.marginTop=value*1.5+'px';
+                rocks.style.top=value*-0.12+'px';
+                forest.style.top=value*0.25+'px';
+                header.style.top=value*0.5+'px';
 
-      <div class="weather-forecast" id="weather-forecast">
-          <div class="weather-forecast-item">
-              <div class="pressures"><i class="fa-duotone fa-heat"></i>Pressure</div>
-             
-              <div class="pressure">Pressure 1000 Pa</div>
-              
-          </div>
-          <div class="weather-forecast-item">
-              <div class="sealevels"><i class="fa-duotone fa-water"></i>sealevel</div>
-              
-              <div class="sea_level">sealevel 1345</div>
-              
-          </div>
-          <div class="weather-forecast-item">
-              <div class="sunrise"><i class="fa-solid fa-sun-bright"></i>sun</div>
-             
-              <div class="rise">sunrise 4566</div>
-              <div class="set">sunset 7899</div>
-          </div>
-          <div class="weather-forecast-item">
-
-            <div class="visibilitys"><i class="fa-solid fa-eye"></i>
-                visibility</div>
-
-            
-            <div class="visibility">visibility 1000</div>
-            
-        </div>
-        
-
-      </div>
-  </div>
-  <div class="bubbles">
-    <img src="bubble2.png">
-    <img src="bubble2.png">
-    <img src="bubble2.png">
-    <img src="bubble2.png">
-    <img src="bubble2.png">
-    <img src="bubble2.png">
-    <img src="bubble2.png">
-</div>
-</body>
+            })
+        </script>
+    </body>
 </html>
-
